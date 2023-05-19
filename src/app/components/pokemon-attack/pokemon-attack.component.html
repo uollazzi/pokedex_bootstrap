@@ -1,0 +1,16 @@
+<div *ngIf="attack">
+  <div class="toast show">
+    <div class="toast-header">
+      <div class="d-flex gap-1">
+        <app-pokemon-type-icon *ngFor="let t of attack.cost" [type]="t"></app-pokemon-type-icon>
+      </div>
+      <strong class="ms-3 me-auto fs-5">{{attack.name}}</strong>
+    </div>
+    <div class="toast-body">
+      <p>
+        {{attack.text}}
+      </p>
+
+    </div>
+  </div>
+</div>

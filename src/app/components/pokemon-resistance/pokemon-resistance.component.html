@@ -1,0 +1,10 @@
+<div *ngIf="resistance">
+  <div class="toast show">
+    <div class="toast-body">
+      <div class="d-flex flex-wrap gap-1">
+        <app-pokemon-type-icon [type]="resistance.type"></app-pokemon-type-icon>
+        <strong class="fs-5">{{resistance.value}}</strong>
+      </div>
+    </div>
+  </div>
+</div>

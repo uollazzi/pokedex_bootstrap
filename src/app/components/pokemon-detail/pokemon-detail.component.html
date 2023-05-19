@@ -1,0 +1,59 @@
+<div *ngIf="pokemon">
+  <div class="row">
+    <div class="col-4">
+      <img [src]="pokemon.images.large" class="img-fluid img-pokemon" [alt]="pokemon.name">
+    </div>
+    <div class="col-8">
+      <h1>{{pokemon.name}}</h1>
+      <div class="d-flex gap-1">
+        <app-pokemon-type-icon *ngFor="let t of pokemon.types" [type]="t"></app-pokemon-type-icon>
+      </div>
+      <ul class="list-group mt-3">
+        <li class="list-group-item">Level: <strong>{{pokemon.level}}</strong></li>
+        <li class="list-group-item">Hp: <strong>{{pokemon.hp}}</strong></li>
+        <li class="list-group-item">Supertype: <strong>{{pokemon.supertype}}</strong></li>
+        <li class="list-group-item">Subtypes: <strong>{{pokemon.subtypes}}</strong></li>
+        <li class="list-group-item">Evolves to: <strong>{{pokemon.evolvesTo}}</strong></li>
+        <li class="list-group-item">Rules: <strong>{{pokemon.rules}}</strong></li>
+        <li class="list-group-item">Set: <strong>{{pokemon.set.series}} - {{pokemon.set.name}}</strong></li>
+        <li class="list-group-item">Rarity: <strong>{{pokemon.rarity}}</strong></li>
+        <li class="list-group-item">Artist: <strong>{{pokemon.artist}}</strong></li>
+        <li class="list-group-item">Retreat cost: <div class="d-flex gap-1">
+            <app-pokemon-type-icon *ngFor="let c of pokemon.retreatCost" [type]="c"></app-pokemon-type-icon>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-6">
+      <h3>Attacchi</h3>
+      <div class="d-flex gap-3 flex-wrap">
+        <app-pokemon-attack *ngFor="let a of pokemon.attacks" [attack]="a"></app-pokemon-attack>
+      </div>
+    </div>
+    <div class="col-6">
+      <h3>Abilità</h3>
+      <div class="d-flex gap-3 flex-wrap">
+        <app-pokemon-ability *ngFor="let a of pokemon.abilities" [ability]="a"></app-pokemon-ability>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-6">
+      <h3>Resistenze</h3>
+      <div class="d-flex gap-3 flex-wrap">
+        <app-pokemon-resistance *ngFor="let r of pokemon.resistances" [resistance]="r"></app-pokemon-resistance>
+      </div>
+    </div>
+    <div class="col-6">
+      <h3>Debolezze</h3>
+      <div class="d-flex gap-3 flex-wrap">
+        <app-pokemon-resistance *ngFor="let w of pokemon.weaknesses" [resistance]="w"></app-pokemon-resistance>
+      </div>
+    </div>
+  </div>
+
+</div>

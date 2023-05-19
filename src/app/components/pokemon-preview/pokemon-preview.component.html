@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem;" *ngIf="pokemon">
+  <img [src]="pokemon.images.small" class="card-img-top" [alt]="pokemon.name">
+  <div class="card-body">
+    <h5 class="card-title">{{pokemon.name}}</h5>
+    <p class="card-text text-truncate">{{pokemon.set.series}}<br>{{pokemon.set.name}}
+    </p>
+    <a routerLink="/pokemons/{{pokemon.id}}" class="btn btn-primary">Dettagli</a>
+  </div>
+</div>
